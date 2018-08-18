@@ -26,7 +26,7 @@ class GuessTest < Minitest::Test
     assert_equal expected, actual
   end
 
-  def test_it_can_compare_cards
+  def test_it_can_compare_same_cards
     card = Card.new("10", "Hearts")
     guess = Guess.new("10 of Hearts", card)
     expected = true
@@ -34,10 +34,26 @@ class GuessTest < Minitest::Test
     assert_equal expected, actual
   end
 
-  def test_if_can_give_feedback
+  def test_it_can_compare_different_cards
+    card = Card.new("Queen", "Clubs")
+    guess = Guess.new("2 of Diamonds", card)
+    expected = false
+    actual = guess.correct?
+    assert_equal expected, actual
+  end
+
+  def test_if_can_give_positive_feedback
     card = Card.new("10", "Hearts")
     guess = Guess.new("10 of Hearts", card)
     expected = "Correct!"
+    actual = guess.feedback
+    assert_equal expected, actual
+  end
+
+  def test_if_can_give_negative_feedback
+    card = Card.new("Queen", "Clubs")
+    guess = Guess.new("2 of Diamonds", card)
+    expected = "Incorrect."
     actual = guess.feedback
     assert_equal expected, actual
   end

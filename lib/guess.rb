@@ -25,7 +25,7 @@ class Guess
     if guess_card[0] == @card.value && guess_card[-1] == @card.suit
       "Correct!"
     else
-      false
+      "Incorrect."
     end
   end
 
