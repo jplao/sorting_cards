@@ -7,6 +7,5 @@ class Card
     @value = value
     @suit = suit
   end
-binding. pry
 
 end
