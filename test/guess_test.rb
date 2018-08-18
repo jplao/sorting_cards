@@ -26,4 +26,11 @@ class GuessTest < Minitest::Test
     assert_equal expected, actual
   end
 
+  def test_it_can_compare_cards
+    card = Card.new("10", "Hearts")
+    guess = Guess.new("10 of Hearts", card)
+    expected = true
+    actual = guess.correct?
+    assert_equal expected, actual
+  end
 end

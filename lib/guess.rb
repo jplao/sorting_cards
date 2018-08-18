@@ -8,6 +8,18 @@ class Guess
     @response = response
     @card = card
   end
+
+  def correct?
+    guess_card = @response.split(' ')
+    guess_value = guess_card[0]
+    guess_suit = guess_card[-1]
+    if guess_value == @card.value && guess_suit == @card.suit
+      true
+    else
+      false
+    end
+  end
+
 binding.pry
 
 end
