@@ -19,8 +19,7 @@ class Guess
   end
 
   def feedback
-    guess_card = @response.split(' ')
-    if guess_card[0] == @card.value && guess_card[-1] == @card.suit
+    if correct? == true 
       "Correct!"
     else
       "Incorrect."
