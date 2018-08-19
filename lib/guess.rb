@@ -11,9 +11,7 @@ class Guess
 
   def correct?
     guess_card = @response.split(' ')
-    guess_value = guess_card[0]
-    guess_suit = guess_card[-1]
-    if guess_value == @card.value && guess_suit == @card.suit
+    if guess_card[0] == @card.value && guess_card[-1] == @card.suit
       true
     else
       false
