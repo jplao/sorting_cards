@@ -2,14 +2,15 @@ require 'pry'
 require './lib/card'
 
 class Deck
-attr_accessor :cards
+attr_reader :cards
 
   def initialize (card)
     @card = card
   end
 
   def cards
-    p @card
+    cards = {}
+    cards[@card]
   end
 
   def count
