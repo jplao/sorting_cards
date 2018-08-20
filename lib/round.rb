@@ -6,6 +6,13 @@ class Round
 
   def initialize(deck)
     @deck = deck
+    @guesses = []
   end
-binding.pry 
+
+  def guesses
+    @guesses
+  end 
+
+
+binding.pry
 end
