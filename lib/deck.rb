@@ -5,11 +5,12 @@ class Deck
 attr_reader :cards
 
   def initialize(card)
-    @cards = []
+    @card = card
   end
 
   def cards
-    @cards << card
+    cards = []
+    cards << @card
   end
 
   def count
