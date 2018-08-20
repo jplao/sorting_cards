@@ -4,13 +4,12 @@ require './lib/card'
 class Deck
 attr_reader :cards
 
-  def initialize (card)
-    @card = card
+  def initialize(card)
+    @cards = []
   end
 
   def cards
-    cards = {}
-    cards[@card]
+    @cards << card
   end
 
   def count
@@ -19,4 +18,3 @@ attr_reader :cards
 
 binding.pry
 end
-exit
