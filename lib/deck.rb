@@ -12,5 +12,4 @@ attr_reader :cards, :count
   def count
     @count = cards.count
   end
-
 end
