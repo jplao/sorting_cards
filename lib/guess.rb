@@ -26,6 +26,4 @@ class Guess
     end
   end
 
-binding.pry
-
 end

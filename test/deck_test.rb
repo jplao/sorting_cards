@@ -1,8 +1,8 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require './lib/card'
+require './lib/deck'
 
-class CardTest < Minitest::Test
+class DeckTest < Minitest::Test
 
   def test_check_it_exists
     deck = Deck.new(card_1)
@@ -16,7 +16,7 @@ class CardTest < Minitest::Test
     deck = Deck.new([card_1, card_2, card_3])
     expected = [card_1, card_2, card_3]
     actual = deck.cards
-    assert_equal expected, actual 
+    assert_equal expected, actual
   end
 
   def test_it_can_count_stored_cards

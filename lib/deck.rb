@@ -2,20 +2,15 @@ require 'pry'
 require './lib/card'
 
 class Deck
-attr_accessor :cards
+attr_reader :cards, :count
 
-  def initialize (card)
-    @card = card
-  end
-
-  def cards
-    p @card
+  def initialize(cards)
+    @cards = cards
+    @count = 0
   end
 
   def count
-    cards.count
+    @count = cards.count
   end
 
-binding.pry
 end
-exit
