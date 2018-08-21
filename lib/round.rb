@@ -11,7 +11,6 @@ class Round
     @deck = deck
     @guesses = []
     @deck_index = 0
-    @guess_index = 0
   end
 
 
@@ -42,5 +41,4 @@ class Round
     percent.to_i
   end
 
-binding.pry
 end
