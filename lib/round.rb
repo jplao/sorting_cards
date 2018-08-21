@@ -1,7 +1,8 @@
 require 'pry'
-require './lib/deck'
 require './lib/card'
 require './lib/guess'
+require './lib/deck'
+
 
 class Round
   attr_reader :deck, :guesses
@@ -9,6 +10,7 @@ class Round
   def initialize(deck)
     @deck = deck
     @guesses = []
+    @correct_guesses = 0
   end
 
 
@@ -21,6 +23,8 @@ class Round
     guess = Guess.new(response, current_card)
     @guesses << guess
   end
+
+
 
 binding.pry
 end

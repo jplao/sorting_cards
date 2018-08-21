@@ -6,8 +6,11 @@ attr_reader :cards, :count
 
   def initialize(cards)
     @cards = cards
+    @count = 0
+  end
+
+  def count
     @count = cards.count
   end
 
-binding.pry
 end
