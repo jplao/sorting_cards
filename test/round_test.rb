@@ -5,8 +5,11 @@ require './lib/round'
 class RoundTest < Minitest::Test
 
   def test_check_it_exists
+    card_1 = Card.new("3","Hearts")
+    card_2 = Card.new("4", "Clubs")
+    deck = Deck.new([card_1, card_2])
     round = Round.new(deck)
-    assert_instance_of Round, card
+    assert_instance_of Round, round
   end
 
   def test_it_can_find_current_card
@@ -15,17 +18,41 @@ class RoundTest < Minitest::Test
     deck = Deck.new([card_1, card_2])
     round = Round.new(deck)
     actual = round.current_card
-    expected =
+    expected = card_1
     assert_equal expected, actual
   end
 
   def test_it_can_record_guesses
+    skip
     card_1 = Card.new("3","Hearts")
     card_2 = Card.new("4", "Clubs")
     deck = Deck.new([card_1, card_2])
     round = Round.new(deck)
-    expected = [#<Guess:0x007fc1792d8330 @card=#<Card:0x007fc1792625e0 @suit="Hearts", @value="3">, @response="3 of Hearts">]
+    expected =
     actual = round.record_guess({value: "3", suit: "Hearts"})
     assert_equal expected, actual
+  end
+
+  def test_it_can_calculate_number_correct
+    card_1 = Card.new("3","Hearts")
+    card_2 = Card.new("4", "Clubs")
+    deck = Deck.new([card_1, card_2])
+    round = Round.new(deck)
+    round.record_guess({value: "3", suit: "Hearts"})
+    expected = 1
+    actual = round.number_correct
+    assert_equal expected, actual
+  end
+
+  def test_it_can_calculate_percent_correct
+    card_1 = Card.new("3","Hearts")
+    card_2 = Card.new("4", "Clubs")
+    deck = Deck.new([card_1, card_2])
+    round = Round.new(deck)
+    round.record_guess({value: "3", suit: "Hearts"})
+    round.record_guess({value: "Jack", suit: "Diamonds"})
+    expected = 50
+    actual = round.percent_correct
+    assert_equal expected, actual 
   end
 end
