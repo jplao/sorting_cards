@@ -14,7 +14,6 @@ attr_reader :cards, :count
   end
 
   def sort
-    return @cards if @cards.size <= 1
     swap = true
       while swap
         swap = false
@@ -28,5 +27,4 @@ attr_reader :cards, :count
     @cards
   end
 
-binding.pry
 end

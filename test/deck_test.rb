@@ -46,7 +46,6 @@ class DeckTest < Minitest::Test
   end
 
   def test_it_can_sort_cards
-    skip
     card_1 = Card.new("4","Hearts")
     card_2 = Card.new("Jack", "Clubs")
     card_3 = Card.new("5", "Diamonds")
@@ -60,12 +59,12 @@ class DeckTest < Minitest::Test
   end
 
   def test_it_can_compare_number_cards
-    card_1 = Card.new("4","Hearts")
-    card_2 = Card.new("1", "Clubs")
+    card_1 = Card.new("4", "Hearts")
+    card_2 = Card.new("3", "Clubs")
     card_3 = Card.new("2", "Diamonds")
     deck = Deck.new([card_1, card_2, card_3])
 
-    expected = [card_2, card_3, card_1]
+    expected = [card_3, card_2, card_1]
     actual = deck.sort
     assert_equal expected, actual
   end
