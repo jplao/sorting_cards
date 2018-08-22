@@ -25,4 +25,22 @@ class CardTest < Minitest::Test
     actual = card.suit
     assert_equal expected, actual
   end
+
+  def test_it_can_hold_rank_values
+    card = Card.new("Jack", "Clubs")
+
+    expected = {"2" => 2, "3" => 3, "4" => 4, "5" => 5, "6" => 6, "7" => 7,
+              "8" => 8, "9" => 9, "10" => 10, "Jack" => 11, "Queen" => 12,
+              "King" => 13,"Ace" => 14}
+    actual = card.rank_value
+    assert_equal expected, actual
+  end
+
+  def test_it_can_rank_values
+    card = Card.new("Jack", "Clubs")
+
+    expected = 11
+    actual = card.rank_index
+    assert_equal expected, actual
+  end
 end
