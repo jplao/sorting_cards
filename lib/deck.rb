@@ -19,7 +19,7 @@ attr_reader :cards, :count
       while swap
         swap = false
         (cards.count - 1).times do |x|
-          if @cards[x].value > @cards[x + 1].value
+          if @cards[x].rank_index > @cards[x + 1].rank_index
           @cards[x], @cards[x + 1] = @cards[x + 1], @cards[x]
           swap = true
           end
@@ -27,9 +27,6 @@ attr_reader :cards, :count
       end
     @cards
   end
-
-
-
 
 binding.pry
 end

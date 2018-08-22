@@ -8,4 +8,25 @@ class Card
     @suit = suit
   end
 
+  def rank_value
+    rank = {"2" => 2,
+            "3" => 3,
+            "4" => 4,
+            "5" => 5,
+            "6" => 6,
+            "7" => 7,
+            "8" => 8,
+            "9" => 9,
+            "10" => 10,
+            "Jack" => 11,
+            "Queen" => 12,
+            "King" => 13,
+            "Ace" => 14}
+  end
+
+  def rank_index
+    rank_value[@value]
+  end
+binding.pry
+
 end
