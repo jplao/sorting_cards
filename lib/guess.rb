@@ -2,7 +2,8 @@ require 'pry'
 require './lib/card'
 
 class Guess
-  attr_reader :response, :card
+  attr_reader :response,
+              :card
 
   def initialize (response, card)
     @response = response
@@ -19,7 +20,7 @@ class Guess
   end
 
   def feedback
-    if correct? == true 
+    if correct? == true
       "Correct!"
     else
       "Incorrect."

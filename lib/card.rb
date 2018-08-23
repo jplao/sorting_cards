@@ -1,7 +1,8 @@
 require 'pry'
 
 class Card
-  attr_reader :value, :suit
+  attr_reader :value,
+              :suit
 
   def initialize(value, suit)
     @value = value
